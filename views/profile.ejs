@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+    <title>Workout Page</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="page-header text-center">
+        <h1><span class="fa fa-anchor"></span> Profile Page</h1>
+        <a href="/logout" class="btn btn-default btn-sm">Logout</a>
+    </div>
+
+    <div class="row">
+
+        <!-- LOCAL INFORMATION -->
+        <div class="col-sm-6">
+        </div>
+        <div class="col-sm-6">
+          <h3>Saved workouts</h3>
+          <ul class="messages">
+          <% for(var i=0; i<saved.length; i++) {%>
+            <li class="message">
+              <span><%= saved[i].name %></span>
+              <span><%= saved[i].description %></span> 
+              <span><%= saved[i].difficulty %></span>
+              <span><%= saved[i].duration %></span>
+              <span><%= saved[i].equipment %></span>
+              <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+            </li>
+          <% } %> 
+          <button class="clearAll">Clear All Workouts</button>
+          </ul>
+
+          <h2>Available Workouts</h2>
+          <% for(var i=0; i<workouts.length; i++) {%>
+          <form action="/save" method="POST">
+           <input name="name" value="<%= workouts[i].name %>"></input>
+           <input name="description" value="<%= workouts[i].description %>"></input>
+           <input name="difficulty" value="<%= workouts[i].difficulty %>"></input>
+           <input name="duration" value="<%= workouts[i].duration %>"></input>
+           <input name="equipment" value="<%= workouts[i].equipment %>"></input>
+            <button type="submit">Save Workout</button>
+          </form>
+          <% } %> 
+         
+        </div>
+        
+
+</div>
+
+<script src="main.js"></script>
+
+</body>
+</html>
