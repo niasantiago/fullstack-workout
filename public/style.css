@@ -1,9 +1,26 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto Slab', serif;
+}
+
 body{
   padding-top:80px;
   word-wrap:break-word;
   background-image: url(../public/img/workout.png);
   background-repeat: no-repeat; 
+  background-color: #00c4f5;
+  contain: cover;
+  display:flex; 
 }
+
 img{
   height: 200px;
-}
+} 
+
+h1, h2, h3 {
+  color:white; 
+} 
+
+
+
+
